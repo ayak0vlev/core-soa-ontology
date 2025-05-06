@@ -12,6 +12,8 @@
   <!-- classes -->
  
   <owl:Class rdf:about="#Event">
+    <rdfs:label>Event</rdfs:label>
+    <rdfs:comment>An event is something that happens, to which an element may choose to respond. Events can be generated or responded to by any element. Similarly, events may be generated (emitted) by any element.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#Policy"/>
     </owl:disjointWith>
@@ -24,6 +26,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#InformationType">
+    <rdfs:label>InformationType</rdfs:label>
+    <rdfs:comment>An information type represents the kind of information exchanged through a service interface. It is instantiated by information items during interactions.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#Policy"/>
     </owl:disjointWith>
@@ -36,6 +40,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#ServiceComposition">
+    <rdfs:label>ServiceComposition</rdfs:label>
+    <rdfs:comment>A service composition is the result of assembling a collection of services to perform a new higher-level service.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#Composition"/>
     </rdfs:subClassOf>
@@ -48,6 +54,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#Effect">
+    <rdfs:label>Effect</rdfs:label>
+    <rdfs:comment>An effect represents the outcome of interacting with a service. It is the value delivered to the consumer and does not include internal side-effects.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#Policy"/>
     </owl:disjointWith>
@@ -69,6 +77,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#Task">
+    <rdfs:label>Task</rdfs:label>
+    <rdfs:comment>A task is an atomic action that accomplishes a defined result. Tasks are done by human actors and may use services.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#Policy"/>
     </owl:disjointWith>
@@ -114,6 +124,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#System">
+    <rdfs:label>System</rdfs:label>
+    <rdfs:comment>A system is an organized collection of elements with a defined boundary. It can be hierarchically combined into systems of systems.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#Task"/>
     </owl:disjointWith>
@@ -126,6 +138,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#Service">
+    <rdfs:label>Service</rdfs:label>
+    <rdfs:comment>A service is a logical representation of a set of activities that has specified outcomes, is self-contained, and is a 'black box' to consumers.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#System"/>
     </owl:disjointWith>
@@ -153,6 +167,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#Policy">
+    <rdfs:label>Policy</rdfs:label>
+    <rdfs:comment>A policy is a statement of direction that a human actor may intend to follow or intend that another human actor should follow. Policies can apply to any element.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#InformationType"/>
     </owl:disjointWith>
@@ -174,6 +190,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#HumanActor">
+    <rdfs:label>HumanActor</rdfs:label>
+    <rdfs:comment>A human actor is a person or an organization. It is disjoint with Service and Task but may represent or be represented by other elements.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#Element"/>
     </rdfs:subClassOf>
@@ -192,6 +210,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#Composition">
+    <rdfs:label>Composition</rdfs:label>
+    <rdfs:comment>A composition is the result of assembling a collection of elements for a particular purpose. It is a subclass of System and has a specific composition pattern that defines how the elements are assembled.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#Task"/>
     </owl:disjointWith>
@@ -237,6 +257,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#ServiceInterface">
+    <rdfs:label>ServiceInterface</rdfs:label>
+    <rdfs:comment>A service interface defines how other elements can interact and exchange information with a service. It supports loose coupling and service mediation.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#Service"/>
     </owl:disjointWith>
@@ -285,6 +307,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#Element">
+    <rdfs:label>Element</rdfs:label>
+    <rdfs:comment>An element is an indivisible unit at a given level of abstraction with a clearly defined boundary. It is a fundamental building block of the system.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#Policy"/>
     </owl:disjointWith>
@@ -309,6 +333,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#ServiceContract">
+    <rdfs:label>ServiceContract</rdfs:label>
+    <rdfs:comment>A service contract defines the terms, conditions, and interaction rules that interacting participants agree to for using a service.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#ServiceInterface"/>
     </owl:disjointWith>
@@ -390,6 +416,8 @@
   </owl:Class>
  
   <owl:Class rdf:about="#Process">
+    <rdfs:label>Process</rdfs:label>
+    <rdfs:comment>A process is a composition whose elements are composed into a sequence or flow of activities and interactions to carry out certain work.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="#ServiceContract"/>
     </owl:disjointWith>
@@ -406,183 +434,251 @@
   <owl:ObjectProperty rdf:about="#isPartyTo">
     <rdfs:domain rdf:resource="#HumanActor"/>
     <rdfs:range rdf:resource="#ServiceContract"/>
+    <rdfs:label>isPartyTo</rdfs:label>
+    <rdfs:comment>Indicates the service contract associated with a human actor.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#involvesParty">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#isPartyTo"/>
     </owl:inverseOf>
+    <rdfs:label>involvesParty</rdfs:label>
+    <rdfs:comment>Indicates the party involved in a service contract.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#orchestratedBy">
     <rdfs:domain rdf:resource="#Composition"/>
     <rdfs:range rdf:resource="#Element"/>
+    <rdfs:label>orchestratedBy</rdfs:label>
+    <rdfs:comment>Indicates the element orchestrating a composition.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#orchestrates">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#orchestratedBy"/>
     </owl:inverseOf>
+    <rdfs:label>orchestrates</rdfs:label>
+    <rdfs:comment>Indicates the composition orchestrated by an element.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#isContractFor">
     <rdfs:domain rdf:resource="#ServiceContract"/>
     <rdfs:range rdf:resource="#Service"/>
+    <rdfs:label>isContractFor</rdfs:label>
+    <rdfs:comment>Indicates the service for which a contract is defined.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#hasContract">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#isContractFor"/>
     </owl:inverseOf>
+    <rdfs:label>hasContract</rdfs:label>
+    <rdfs:comment>Links a service to its contract.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#setsPolicy">
     <rdfs:domain rdf:resource="#HumanActor"/>
     <rdfs:range rdf:resource="#Policy"/>
+    <rdfs:label>setsPolicy</rdfs:label>
+    <rdfs:comment>Indicates the policy set by a human actor.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#isSetBy">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#setsPolicy"/>
     </owl:inverseOf>
+    <rdfs:label>isSetBy</rdfs:label>
+    <rdfs:comment>Indicates the human actor who sets a policy.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#generates">
     <rdfs:domain rdf:resource="#Element"/>
     <rdfs:range rdf:resource="#Event"/>
+    <rdfs:label>generates</rdfs:label>
+    <rdfs:comment>Indicates the event generated by an element.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#generatedBy">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#generates"/>
     </owl:inverseOf>
+    <rdfs:label>generatedBy</rdfs:label>
+    <rdfs:comment>Indicates the entity that generated an event.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#represents">
     <rdfs:domain rdf:resource="#Element"/>
     <rdfs:range rdf:resource="#Element"/>
+    <rdfs:label>represents</rdfs:label>
+    <rdfs:comment>Indicates the element represented by another element.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#representedBy">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#represents"/>
     </owl:inverseOf>
+    <rdfs:label>representedBy</rdfs:label>
+    <rdfs:comment>Indicates the representation of an element.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#hasInput">
     <rdfs:domain rdf:resource="#ServiceInterface"/>
     <rdfs:range rdf:resource="#InformationType"/>
+    <rdfs:label>hasInput</rdfs:label>
+    <rdfs:comment>Specifies the input information type for a service interface.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#isInputAt">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#hasInput"/>
     </owl:inverseOf>
+    <rdfs:label>isInputAt</rdfs:label>
+    <rdfs:comment>Indicates the service interface where an information type is used as input.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#doneBy">
     <rdfs:domain rdf:resource="#Task"/>
     <rdfs:range rdf:resource="#HumanActor"/>
+    <rdfs:label>doneBy</rdfs:label>
+    <rdfs:comment>Indicates the actor responsible for performing a task.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#does">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#doneBy"/>
     </owl:inverseOf>
+    <rdfs:label>does</rdfs:label>
+    <rdfs:comment>Indicates an action performed by an entity.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#specifies">
     <rdfs:domain rdf:resource="#ServiceContract"/>
     <rdfs:range rdf:resource="#Effect"/>
+    <rdfs:label>specifies</rdfs:label>
+    <rdfs:comment>Indicates the effect specified by a service contract.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#isSpecifiedBy">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#specifies"/>
     </owl:inverseOf>
+    <rdfs:label>isSpecifiedBy</rdfs:label>
+    <rdfs:comment>Indicates the service contract that specifies an effect.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#appliesTo">
+    <rdfs:label>appliesTo</rdfs:label>
     <rdfs:domain rdf:resource="#Policy"/>
+    <rdfs:comment>Defines the policy that applies to a specific entity.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#isSubjectTo">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#appliesTo"/>
     </owl:inverseOf>
+    <rdfs:label>isSubjectTo</rdfs:label>
+    <rdfs:comment>Indicates the policy to which an entity is subject.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#hasInterface">
     <rdfs:domain rdf:resource="#Service"/>
     <rdfs:range rdf:resource="#ServiceInterface"/>
+    <rdfs:label>hasInterface</rdfs:label>
+    <rdfs:comment>Links a service to its interface.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#isInterfaceOf">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#hasInterface"/>
     </owl:inverseOf>
+    <rdfs:label>isInterfaceOf</rdfs:label>
+    <rdfs:comment>Indicates the service associated with a service interface.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#respondsTo">
     <rdfs:domain rdf:resource="#Element"/>
     <rdfs:range rdf:resource="#Event"/>
+    <rdfs:label>respondsTo</rdfs:label>
+    <rdfs:comment>Indicates the event to which an element responds.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#respondedToBy">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#respondsTo"/>
     </owl:inverseOf>
+    <rdfs:label>respondedToBy</rdfs:label>
+    <rdfs:comment>Indicates the entity responding to an event.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#performs">
     <rdfs:domain rdf:resource="#Element"/>
     <rdfs:range rdf:resource="#Service"/>
+    <rdfs:label>performs</rdfs:label>
+    <rdfs:comment>Indicates the service performed by an element.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#performedBy">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#performs"/>
     </owl:inverseOf>
+    <rdfs:label>performedBy</rdfs:label>
+    <rdfs:comment>Indicates the actor performing a service.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#uses">
     <rdfs:domain rdf:resource="#Element"/>
     <rdfs:range rdf:resource="#Element"/>
+    <rdfs:label>uses</rdfs:label>
+    <rdfs:comment>Indicates the element that uses another element.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#usedBy">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#uses"/>
     </owl:inverseOf>
+    <rdfs:label>usedBy</rdfs:label>
+    <rdfs:comment>Indicates the element that is used by another element.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#hasOutput">
     <rdfs:domain rdf:resource="#ServiceInterface"/>
     <rdfs:range rdf:resource="#InformationType"/>
+    <rdfs:label>hasOutput</rdfs:label>
+    <rdfs:comment>Specifies the output information type for a service interface.</rdfs:comment>
   </owl:ObjectProperty>
  
   <owl:ObjectProperty rdf:about="#isOutputAt">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#hasOutput"/>
     </owl:inverseOf>
+    <rdfs:label>isOutputAt</rdfs:label>
+    <rdfs:comment>Indicates the service interface where an information type is used as output.</rdfs:comment>
   </owl:ObjectProperty>
  
   <!-- datatype properties -->
  
   <owl:DatatypeProperty rdf:about="#legalAspect">
     <rdfs:domain rdf:resource="#ServiceContract"/>
+    <rdfs:label>legalAspect</rdfs:label>
+    <rdfs:comment>Defines the legal aspect of a service contract.</rdfs:comment>
   </owl:DatatypeProperty>
  
   <owl:DatatypeProperty rdf:about="#constraints">
     <rdfs:domain rdf:resource="#ServiceInterface"/>
+    <rdfs:label>constraints</rdfs:label>
+    <rdfs:comment>Defines constraints for a service interface.</rdfs:comment>
   </owl:DatatypeProperty>
  
   <owl:DatatypeProperty rdf:about="#compositionPattern">
     <rdfs:domain rdf:resource="#Composition"/>
+    <rdfs:label>compositionPattern</rdfs:label>
+    <rdfs:comment>Defines the pattern of a composition.</rdfs:comment>
   </owl:DatatypeProperty>
  
   <owl:DatatypeProperty rdf:about="#interactionAspect">
     <rdfs:domain rdf:resource="#ServiceContract"/>
+    <rdfs:label>interactionAspect</rdfs:label>
+    <rdfs:comment>Defines the interaction aspect of a service contract.</rdfs:comment>
   </owl:DatatypeProperty>
  
 </rdf:RDF>
