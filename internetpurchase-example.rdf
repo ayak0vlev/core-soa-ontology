@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/internetpurchase-example.rdf"
+     xml:base="http://example.org/internetpurchase-example.rdf"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core-soa="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"/>
+    </owl:Ontology>
+    
+  
+
+    <!-- #BuyTVOnline -->
+
+    <owl:NamedIndividual rdf:about="#BuyTVOnline">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Service"/>
+        <core-soa:hasContract rdf:resource="#BuyTVOnlineContract"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #BuyTVOnlineContract -->
+
+    <owl:NamedIndividual rdf:about="#BuyTVOnlineContract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#ServiceContract"/>
+        <rdfs:comment>Describes how to interact with BuyTVOnline as well as the legal contract between TV buyer and OnlineTVSales.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #DeliverTV -->
+
+    <owl:NamedIndividual rdf:about="#DeliverTV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Task"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #Jill -->
+
+    <owl:NamedIndividual rdf:about="#Jill">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
+        <core-soa:does rdf:resource="#PayForTV"/>
+        <core-soa:does rdf:resource="#PurchaseTV"/>
+        <core-soa:isPartyTo rdf:resource="#BuyTVOnlineContract"/>
+        <core-soa:partyTo rdf:resource="#BuyTVOnlineContract"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #OnlineSalesComponent -->
+
+    <owl:NamedIndividual rdf:about="#OnlineSalesComponent">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#ServiceComposition"/>
+        <core-soa:performs rdf:resource="#OnlineTVSales"/>
+        <core-soa:uses rdf:resource="#PayService"/>
+        <core-soa:uses rdf:resource="#SelectWhatToBuyService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #OnlineTVSales -->
+
+    <owl:NamedIndividual rdf:about="#OnlineTVSales">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
+        <core-soa:does rdf:resource="#DeliverTV"/>
+        <core-soa:isPartyTo rdf:resource="#BuyTVOnlineContract"/>
+        <core-soa:partyTo rdf:resource="#BuyTVOnlineContract"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #OnlineTVSalesProcess -->
+
+    <owl:NamedIndividual rdf:about="#OnlineTVSalesProcess">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Process"/>
+        <core-soa:uses rdf:resource="#DeliverTV"/>
+        <core-soa:uses rdf:resource="#Jill"/>
+        <core-soa:uses rdf:resource="#OnlineTVSales"/>
+        <core-soa:uses rdf:resource="#PayForTV"/>
+        <core-soa:uses rdf:resource="#PurchaseTV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #PayComponent -->
+
+    <owl:NamedIndividual rdf:about="#PayComponent">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
+        <core-soa:performs rdf:resource="#PayService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #PayForTV -->
+
+    <owl:NamedIndividual rdf:about="#PayForTV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Task"/>
+        <core-soa:uses rdf:resource="#BuyTVOnline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #PayService -->
+
+    <owl:NamedIndividual rdf:about="#PayService">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #PurchaseTV -->
+
+    <owl:NamedIndividual rdf:about="#PurchaseTV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Task"/>
+        <core-soa:uses rdf:resource="#BuyTVOnline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #SelectWhatToBuyComponent -->
+
+    <owl:NamedIndividual rdf:about="#SelectWhatToBuyComponent">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
+        <core-soa:performs rdf:resource="#SelectWhatToBuyService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #SelectWhatToBuyService -->
+
+    <owl:NamedIndividual rdf:about="#SelectWhatToBuyService">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Service"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

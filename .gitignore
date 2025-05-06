@@ -1,0 +1,14 @@
+# Ignore Protégé's autosave backups
+*.bak
+*.undo
+
+# Ignore temporary workspace files
+*.log
+*~
+
+# Ignore system files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Ignore catalog-v001.xml
+catalog-v001.xml
