@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://example.org/carcrash-example.rdf"
-     xml:base="http://example.org/carcrash-example.rdf"
-     xmlns:core-soa="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
+<rdf:RDF xmlns="http://example.org/carwash-example.rdf"
+     xml:base="http://example.org/carwash-example.rdf#"
+     xmlns:core-soa="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -24,309 +24,309 @@
     
 
 
-    <!-- #Administration -->
+    <!-- Administration -->
 
-    <owl:NamedIndividual rdf:about="#Administration">
+    <owl:NamedIndividual rdf:about="Administration">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
-        <core-soa:represents rdf:resource="#AdministrativeSystem"/>
+        <core-soa:represents rdf:resource="AdministrativeSystem"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #AdministrativeSystem -->
+    <!-- AdministrativeSystem -->
 
-    <owl:NamedIndividual rdf:about="#AdministrativeSystem">
+    <owl:NamedIndividual rdf:about="AdministrativeSystem">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#System"/>
-        <core-soa:uses rdf:resource="#Owner"/>
-        <core-soa:uses rdf:resource="#Secretary"/>
+        <core-soa:uses rdf:resource="Owner"/>
+        <core-soa:uses rdf:resource="Secretary"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #AutomatedCarWash -->
+    <!-- AutomatedCarWash -->
 
-    <owl:NamedIndividual rdf:about="#AutomatedCarWash">
+    <owl:NamedIndividual rdf:about="AutomatedCarWash">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
-        <core-soa:orchestrates rdf:resource="#AutomatedCarWashProcess"/>
-        <core-soa:represents rdf:resource="#AutomatedCarWashProcess"/>
+        <core-soa:orchestrates rdf:resource="AutomatedCarWashProcess"/>
+        <core-soa:represents rdf:resource="AutomatedCarWashProcess"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #AutomatedCarWashProcess -->
+    <!-- AutomatedCarWashProcess -->
 
-    <owl:NamedIndividual rdf:about="#AutomatedCarWashProcess">
+    <owl:NamedIndividual rdf:about="AutomatedCarWashProcess">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Process"/>
-        <core-soa:uses rdf:resource="#Dry"/>
-        <core-soa:uses rdf:resource="#Wash"/>
+        <core-soa:uses rdf:resource="Dry"/>
+        <core-soa:uses rdf:resource="Wash"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #BasicWash -->
+    <!-- BasicWash -->
 
-    <owl:NamedIndividual rdf:about="#BasicWash">
+    <owl:NamedIndividual rdf:about="BasicWash">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Service"/>
-        <core-soa:hasContract rdf:resource="#BasicWashContract"/>
-        <core-soa:hasInterface rdf:resource="#WashingMachineInterface"/>
+        <core-soa:hasContract rdf:resource="BasicWashContract"/>
+        <core-soa:hasInterface rdf:resource="WashingMachineInterface"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #BasicWashContract -->
+    <!-- BasicWashContract -->
 
-    <owl:NamedIndividual rdf:about="#BasicWashContract">
+    <owl:NamedIndividual rdf:about="BasicWashContract">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#ServiceContract"/>
-        <core-soa:involvesParty rdf:resource="#CarWashBusiness"/>
-        <core-soa:involvesParty rdf:resource="#Judy"/>
-        <core-soa:specifies rdf:resource="#CleanCar"/>
+        <core-soa:involvesParty rdf:resource="CarWashBusiness"/>
+        <core-soa:involvesParty rdf:resource="Judy"/>
+        <core-soa:specifies rdf:resource="CleanCar"/>
         <rdfs:comment>BasicWashContract involves parties CarWashBusiness and Judy and specifies that Judy (as the legal consumer) pays CarWashBusiness (as the legal provider) $10 for the one consumption of BasicWash with the effect of (one) CleanCar.
 Note that *BasicWash* is actually performed by CarWash and not by the legal provider CarWashBusiness, in this particular example *CarWash* happens to be a member of *CarWashBusiness* but such need not always be the case, *CarWash* could have been some third party provider.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- #CarWash -->
+    <!-- CarWash -->
 
-    <owl:NamedIndividual rdf:about="#CarWash">
+    <owl:NamedIndividual rdf:about="CarWash">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
-        <core-soa:performs rdf:resource="#BasicWash"/>
-        <core-soa:performs rdf:resource="#GoldWash"/>
-        <core-soa:represents rdf:resource="#CarWashSystem"/>
+        <core-soa:performs rdf:resource="BasicWash"/>
+        <core-soa:performs rdf:resource="GoldWash"/>
+        <core-soa:represents rdf:resource="CarWashSystem"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #CarWashBusiness -->
+    <!-- CarWashBusiness -->
 
-    <owl:NamedIndividual rdf:about="#CarWashBusiness">
+    <owl:NamedIndividual rdf:about="CarWashBusiness">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#System"/>
-        <core-soa:uses rdf:resource="#Administration"/>
-        <core-soa:uses rdf:resource="#CarWash"/>
+        <core-soa:uses rdf:resource="Administration"/>
+        <core-soa:uses rdf:resource="CarWash"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #CarWashProcess -->
+    <!-- CarWashProcess -->
 
-    <owl:NamedIndividual rdf:about="#CarWashProcess">
+    <owl:NamedIndividual rdf:about="CarWashProcess">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Process"/>
-        <core-soa:uses rdf:resource="#AutomatedCarWash"/>
-        <core-soa:uses rdf:resource="#InitiateAutomatedWash"/>
-        <core-soa:uses rdf:resource="#PreWash"/>
-        <core-soa:uses rdf:resource="#PreWashGuy"/>
-        <core-soa:uses rdf:resource="#WashOperator"/>
+        <core-soa:uses rdf:resource="AutomatedCarWash"/>
+        <core-soa:uses rdf:resource="InitiateAutomatedWash"/>
+        <core-soa:uses rdf:resource="PreWash"/>
+        <core-soa:uses rdf:resource="PreWashGuy"/>
+        <core-soa:uses rdf:resource="WashOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #CarWashSystem -->
+    <!-- CarWashSystem -->
 
-    <owl:NamedIndividual rdf:about="#CarWashSystem">
+    <owl:NamedIndividual rdf:about="CarWashSystem">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#System"/>
-        <core-soa:uses rdf:resource="#CarWashProcess"/>
-        <core-soa:uses rdf:resource="#PreWashGuy"/>
-        <core-soa:uses rdf:resource="#WashManager"/>
-        <core-soa:uses rdf:resource="#WashOperator"/>
+        <core-soa:uses rdf:resource="CarWashProcess"/>
+        <core-soa:uses rdf:resource="PreWashGuy"/>
+        <core-soa:uses rdf:resource="WashManager"/>
+        <core-soa:uses rdf:resource="WashOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #CleanCar -->
+    <!-- CleanCar -->
 
-    <owl:NamedIndividual rdf:about="#CleanCar">
+    <owl:NamedIndividual rdf:about="CleanCar">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Effect"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #Dry -->
+    <!-- Dry -->
 
-    <owl:NamedIndividual rdf:about="#Dry">
+    <owl:NamedIndividual rdf:about="Dry">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Task"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #GoldWash -->
+    <!-- GoldWash -->
 
-    <owl:NamedIndividual rdf:about="#GoldWash">
+    <owl:NamedIndividual rdf:about="GoldWash">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Service"/>
-        <core-soa:hasInterface rdf:resource="#WashingMachineInterface"/>
+        <core-soa:hasInterface rdf:resource="WashingMachineInterface"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #InitiateAutomatedWash -->
+    <!-- InitiateAutomatedWash -->
 
-    <owl:NamedIndividual rdf:about="#InitiateAutomatedWash">
+    <owl:NamedIndividual rdf:about="InitiateAutomatedWash">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
-        <core-soa:represents rdf:resource="#PushWashButton"/>
+        <core-soa:represents rdf:resource="PushWashButton"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #Jack -->
+    <!-- Jack -->
 
-    <owl:NamedIndividual rdf:about="#Jack">
+    <owl:NamedIndividual rdf:about="Jack">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
-        <core-soa:does rdf:resource="#PushWashButton"/>
-        <core-soa:representedBy rdf:resource="#WashManager"/>
-        <core-soa:representedBy rdf:resource="#WashOperator"/>
+        <core-soa:does rdf:resource="PushWashButton"/>
+        <core-soa:representedBy rdf:resource="WashManager"/>
+        <core-soa:representedBy rdf:resource="WashOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #Joe -->
+    <!-- Joe -->
 
-    <owl:NamedIndividual rdf:about="#Joe">
+    <owl:NamedIndividual rdf:about="Joe">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
-        <core-soa:representedBy rdf:resource="#Owner"/>
+        <core-soa:representedBy rdf:resource="Owner"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #John -->
+    <!-- John -->
 
-    <owl:NamedIndividual rdf:about="#John">
+    <owl:NamedIndividual rdf:about="John">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
-        <core-soa:does rdf:resource="#WashWindows"/>
-        <core-soa:representedBy rdf:resource="#PreWashGuy"/>
-        <core-soa:uses rdf:resource="#WashManager"/>
+        <core-soa:does rdf:resource="WashWindows"/>
+        <core-soa:representedBy rdf:resource="PreWashGuy"/>
+        <core-soa:uses rdf:resource="WashManager"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #Judy -->
+    <!-- Judy -->
 
-    <owl:NamedIndividual rdf:about="#Judy">
+    <owl:NamedIndividual rdf:about="Judy">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
-        <core-soa:uses rdf:resource="#WashManager"/>
+        <core-soa:uses rdf:resource="WashManager"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #Mary -->
+    <!-- Mary -->
 
-    <owl:NamedIndividual rdf:about="#Mary">
+    <owl:NamedIndividual rdf:about="Mary">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
-        <core-soa:representedBy rdf:resource="#Secretary"/>
+        <core-soa:representedBy rdf:resource="Secretary"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #Owner -->
+    <!-- Owner -->
 
-    <owl:NamedIndividual rdf:about="#Owner">
+    <owl:NamedIndividual rdf:about="Owner">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
-        <core-soa:represents rdf:resource="#Joe"/>
-        <core-soa:usedBy rdf:resource="#AdministrativeSystem"/>
+        <core-soa:represents rdf:resource="Joe"/>
+        <core-soa:usedBy rdf:resource="AdministrativeSystem"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #PaymentUpFront -->
+    <!-- PaymentUpFront -->
 
-    <owl:NamedIndividual rdf:about="#PaymentUpFront">
+    <owl:NamedIndividual rdf:about="PaymentUpFront">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Policy"/>
-        <core-soa:appliesTo rdf:resource="#BasicWash"/>
-        <core-soa:appliesTo rdf:resource="#GoldWash"/>
-        <core-soa:isSetBy rdf:resource="#Joe"/>
+        <core-soa:appliesTo rdf:resource="BasicWash"/>
+        <core-soa:appliesTo rdf:resource="GoldWash"/>
+        <core-soa:isSetBy rdf:resource="Joe"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #PreWash -->
+    <!-- PreWash -->
 
-    <owl:NamedIndividual rdf:about="#PreWash">
+    <owl:NamedIndividual rdf:about="PreWash">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
-        <core-soa:represents rdf:resource="#WashWindows"/>
-        <core-soa:usedBy rdf:resource="#CarWashProcess"/>
+        <core-soa:represents rdf:resource="WashWindows"/>
+        <core-soa:usedBy rdf:resource="CarWashProcess"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #PreWashGuy -->
+    <!-- PreWashGuy -->
 
-    <owl:NamedIndividual rdf:about="#PreWashGuy">
+    <owl:NamedIndividual rdf:about="PreWashGuy">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
-        <core-soa:represents rdf:resource="#John"/>
-        <core-soa:usedBy rdf:resource="#CarWashSystem"/>
+        <core-soa:represents rdf:resource="John"/>
+        <core-soa:usedBy rdf:resource="CarWashSystem"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #PushWashButton -->
+    <!-- PushWashButton -->
 
-    <owl:NamedIndividual rdf:about="#PushWashButton">
+    <owl:NamedIndividual rdf:about="PushWashButton">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Task"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #Secretary -->
+    <!-- Secretary -->
 
-    <owl:NamedIndividual rdf:about="#Secretary">
+    <owl:NamedIndividual rdf:about="Secretary">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
-        <core-soa:represents rdf:resource="#Mary"/>
-        <core-soa:usedBy rdf:resource="#AdministrativeSystem"/>
+        <core-soa:represents rdf:resource="Mary"/>
+        <core-soa:usedBy rdf:resource="AdministrativeSystem"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #TypeOfWash -->
+    <!-- TypeOfWash -->
 
-    <owl:NamedIndividual rdf:about="#TypeOfWash">
+    <owl:NamedIndividual rdf:about="TypeOfWash">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#InformationType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #Wash -->
+    <!-- Wash -->
 
-    <owl:NamedIndividual rdf:about="#Wash">
+    <owl:NamedIndividual rdf:about="Wash">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Task"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #WashManager -->
+    <!-- WashManager -->
 
-    <owl:NamedIndividual rdf:about="#WashManager">
+    <owl:NamedIndividual rdf:about="WashManager">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
-        <core-soa:represents rdf:resource="#BasicWash"/>
-        <core-soa:represents rdf:resource="#GoldWash"/>
-        <core-soa:represents rdf:resource="#Jack"/>
-        <core-soa:usedBy rdf:resource="#CarWashSystem"/>
+        <core-soa:represents rdf:resource="BasicWash"/>
+        <core-soa:represents rdf:resource="GoldWash"/>
+        <core-soa:represents rdf:resource="Jack"/>
+        <core-soa:usedBy rdf:resource="CarWashSystem"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #WashOperator -->
+    <!-- WashOperator -->
 
-    <owl:NamedIndividual rdf:about="#WashOperator">
+    <owl:NamedIndividual rdf:about="WashOperator">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
-        <core-soa:represents rdf:resource="#Jack"/>
-        <core-soa:usedBy rdf:resource="#CarWashSystem"/>
+        <core-soa:represents rdf:resource="Jack"/>
+        <core-soa:usedBy rdf:resource="CarWashSystem"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #WashWindows -->
+    <!-- WashWindows -->
 
-    <owl:NamedIndividual rdf:about="#WashWindows">
+    <owl:NamedIndividual rdf:about="WashWindows">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Task"/>
-        <core-soa:doneBy rdf:resource="#John"/>
+        <core-soa:doneBy rdf:resource="John"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- #WashingMachineInterface -->
+    <!-- WashingMachineInterface -->
 
-    <owl:NamedIndividual rdf:about="#WashingMachineInterface">
+    <owl:NamedIndividual rdf:about="WashingMachineInterface">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#ServiceInterface"/>
-        <core-soa:hasInput rdf:resource="#TypeOfWash"/>
+        <core-soa:hasInput rdf:resource="TypeOfWash"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
