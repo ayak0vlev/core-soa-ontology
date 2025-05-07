@@ -672,7 +672,11 @@
   <owl:DatatypeProperty rdf:about="#compositionPattern">
     <rdfs:domain rdf:resource="#Composition"/>
     <rdfs:label>compositionPattern</rdfs:label>
-    <rdfs:comment>Defines the pattern of a composition.</rdfs:comment>
+    <rdfs:comment>Defines the pattern of a composition. Possible values include:
+      - Orchestration: A pattern where there is one element used by the composition that oversees and directs the other elements. The directing element is different from the orchestration and may be inside or outside the boundary. For example, a workflow is a part of the composition but is executing the flow. In Figure 3, the director is invoking elements in the orchestration.
+      - Choreography: A pattern for compositions where the elements used by the composition interact in a non-directed fashion (no director) and every part knows and follows the pattern of behaviour. There is a predefined shared pattern or flow of behaviour. Choreography does not require the elements to have complete knowledge of the pattern of behaviour. In Figure 3, the elements interact with each other according to a pattern.
+      - Collaboration: A pattern for compositions where the elements used by the composition interact in a non-directed fashion (no director), and every part acts according to their own plan/purpose without a predefined pattern or flow of behaviour. Interactions between parts occur as needed by each part. In Figure 3, the elements in the collaboration interact with each other — but there is no pattern or director.
+    </rdfs:comment>
   </owl:DatatypeProperty>
  
   <owl:DatatypeProperty rdf:about="#interactionAspect">
