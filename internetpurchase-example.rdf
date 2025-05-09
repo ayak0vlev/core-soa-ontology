@@ -46,7 +46,6 @@
         <core-soa:does rdf:resource="PayForTV"/>
         <core-soa:does rdf:resource="PurchaseTV"/>
         <core-soa:isPartyTo rdf:resource="BuyTVOnlineContract"/>
-        <core-soa:partyTo rdf:resource="BuyTVOnlineContract"/>
     </owl:NamedIndividual>
     
 
@@ -56,7 +55,7 @@
     <owl:NamedIndividual rdf:about="OnlineSalesComponent">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Element"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#ServiceComposition"/>
-        <core-soa:performs rdf:resource="OnlineTVSales"/>
+        <core-soa:performs rdf:resource="BuyTVOnline"/>
         <core-soa:uses rdf:resource="PayService"/>
         <core-soa:uses rdf:resource="SelectWhatToBuyService"/>
     </owl:NamedIndividual>
@@ -69,7 +68,6 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor"/>
         <core-soa:does rdf:resource="DeliverTV"/>
         <core-soa:isPartyTo rdf:resource="BuyTVOnlineContract"/>
-        <core-soa:partyTo rdf:resource="BuyTVOnlineContract"/>
     </owl:NamedIndividual>
     
 
