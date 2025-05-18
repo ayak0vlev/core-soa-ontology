@@ -10,7 +10,6 @@ The ontology and examples were originally defined by The Open Group (https://www
 * `carwash-example.rdf` - An example RDF instance demonstrating the ontology concepts using a car wash service scenario.
 * `internetpurchase-example.rdf` - An example RDF instance showing how the ontology concepts apply to an online purchase service.
 * `core-soa-model.eapx` - Sparx Enterprise Architect project file with core-soa ontology and examples modeled as UML models for exploration and learning purposes.
-* `catalog-v001.xml` - XML catalog file for managing ontology imports and references.
 * `core-soa-ontology.png` - Diagram showing the structure of the core SOA ontology, extracted from the Enterprise Architect model.
 * `carwash-example.png` - Visual representation of the car wash service example, extracted from the Enterprise Architect model.
 * `internetpurchase-example.png` - Visual representation of the internet purchase service example, extracted from the Enterprise Architect model.
